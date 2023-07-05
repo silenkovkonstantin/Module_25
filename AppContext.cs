@@ -15,7 +15,7 @@ namespace Module_25
         public DbSet<BookDescription> BookDescriptions { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseSqlServer("Ваша строка подключения к БД");
+            optionsBuilder.UseSqlServer(@"Server=.\SQLEXPRESS;Database=EF;Trusted_Connection=True;");
         }
     }
 }

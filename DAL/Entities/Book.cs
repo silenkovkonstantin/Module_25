@@ -10,7 +10,7 @@ namespace Module_25.DAL.Entities
     {
         public int Id { get; set; }
         public string Name { get; set; }
-        public string Year { get; set; }
+        public int Year { get; set; }
         public List<User> Users { get; set; } = new List<User>();
     }
 }

@@ -52,6 +52,23 @@ namespace Module_25.DAL.Repositories
                 appContext.SaveChanges();
             }
         }
+
+        public bool HasBook(AppContext appContext, Book book)
+        {
+            using (appContext)
+            {
+                return appContext.Users.Any(u => u.Books.Contains(book));
+            }
+        }
+
+        public int GetBooksCount(AppContext appContext, int id)
+        {
+            using (appContext)
+            {
+                User user = FindById(appContext, id);
+                return user.Books.Count;
+            }
+        }
     }
 
     public interface IUserRepository
